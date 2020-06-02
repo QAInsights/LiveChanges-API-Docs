@@ -134,7 +134,10 @@
               }
             }
           }
-        }
+        },
+        "tags": [
+          "threads"
+        ]
       }
     },
     "/api/threads": {
@@ -290,7 +293,10 @@
             }
           },
           "description": ""
-        }
+        },
+        "tags": [
+          "variables"
+        ]
       }
     },
     "/api/properties": {
@@ -376,6 +382,9 @@
             "in": "header",
             "name": "Content-Type"
           }
+        ],
+        "tags": [
+          "properties"
         ]
       }
     },
