@@ -47,6 +47,15 @@
                     ]
                   }
                 }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {}
+                }
               }
             },
             "headers": {}
@@ -54,7 +63,17 @@
         },
         "operationId": "get-api-threads",
         "description": "Retrieves information about all thread groups",
-        "parameters": []
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "Origin",
+            "required": true
+          }
+        ],
+        "security": []
       },
       "parameters": []
     }
@@ -62,6 +81,5 @@
   "components": {
     "schemas": {},
     "securitySchemes": {}
-  },
-  "security": []
+  }
 }
