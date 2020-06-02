@@ -64,6 +64,48 @@
         "description": "Retrieves information about a specific thread group.",
         "parameters": []
       }
+    },
+    "/api/threads": {
+      "get": {
+        "summary": "GET All Threads",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "success-response": {
+                    "value": [
+                      {
+                        "getOnErrorStartNextLoop": false,
+                        "getOnErrorStopTest": false,
+                        "scheduler": {
+                          "duration": 600,
+                          "delay": 0
+                        },
+                        "getOnErrorStopTestNow": false,
+                        "getOnErrorStopThread": false,
+                        "isEnabled": true,
+                        "name": "Thread Group",
+                        "active": 0,
+                        "comment": "",
+                        "rampUp": 1
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-api-threads",
+        "description": "Retrieves information about all thread groups"
+      }
     }
   },
   "components": {
