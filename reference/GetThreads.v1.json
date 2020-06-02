@@ -9,7 +9,8 @@
       "email": "catch.nkn@gmail.com"
     },
     "license": {
-      "name": "MIT"
+      "name": "MIT",
+      "url": "https://github.com/QAInsights/LiveChanges-API-Docs/blob/master/LICENSE"
     }
   },
   "servers": [
@@ -70,7 +71,71 @@
         },
         "operationId": "get-api-threads-name",
         "description": "Retrieves information about a specific thread group.",
-        "parameters": []
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {}
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "",
+        "operationId": "post-api-threads-thread-group-name",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "success-response": {
+                    "value": {
+                      "threadNum": 5,
+                      "delay": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "Content-Type"
+          }
+        ],
+        "description": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {
+                "valid-request": {
+                  "value": {
+                    "threadNum": 5,
+                    "delay": 0
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/api/threads": {
@@ -170,6 +235,62 @@
         },
         "operationId": "get-api-variables",
         "description": "Retrieves the variables declared for your test."
+      },
+      "post": {
+        "summary": "",
+        "operationId": "post-api-variables",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "success-response": {
+                    "value": {
+                      "<variable-Name>": "<variable-New-Value>",
+                      "description": "VariablesResource were changed.",
+                      "info": "success"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Send (as JSON) your variables changes.",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "Content-Type"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {
+                "valid-request": {
+                  "value": {
+                    "P_Timer": "2000",
+                    "description": "VariablesResource were changed.",
+                    "info": "success"
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        }
       }
     },
     "/api/properties": {
@@ -198,6 +319,62 @@
           }
         },
         "operationId": "get-api-properties"
+      },
+      "post": {
+        "summary": "",
+        "operationId": "post-api-properties",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "myProp": "bar"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {
+                "valid-request": {
+                  "value": {
+                    "myProp": "bar"
+                  }
+                }
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "Content-Type"
+          }
+        ]
       }
     },
     "/api/test/status": {
