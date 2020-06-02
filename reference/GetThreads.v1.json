@@ -1,0 +1,66 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "GetThreads",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:7566"
+    }
+  ],
+  "paths": {
+    "/api/threads": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [
+          "get",
+          "threads"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "success-response": {
+                    "value": [
+                      {
+                        "getOnErrorStartNextLoop": false,
+                        "getOnErrorStopTest": false,
+                        "scheduler": {
+                          "duration": 600,
+                          "delay": 0
+                        },
+                        "getOnErrorStopTestNow": false,
+                        "getOnErrorStopThread": false,
+                        "isEnabled": true,
+                        "name": "Thread Group",
+                        "active": 0,
+                        "comment": "",
+                        "rampUp": 1
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "operationId": "get-api-threads",
+        "description": "Retrieves information about all thread groups",
+        "parameters": []
+      },
+      "parameters": []
+    }
+  },
+  "components": {
+        "schemas": {}
+
+  }
+}
