@@ -13,7 +13,7 @@
   "paths": {
     "/api/threads": {
       "get": {
-        "summary": "Your GET endpoint",
+        "summary": "GET All Threads",
         "tags": [
           "get",
           "threads"

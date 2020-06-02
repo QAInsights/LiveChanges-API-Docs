@@ -23,7 +23,7 @@
         }
       ],
       "get": {
-        "summary": "Your GET endpoint",
+        "summary": "GET Threads",
         "tags": [],
         "responses": {
           "200": {
