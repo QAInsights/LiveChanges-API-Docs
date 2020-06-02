@@ -440,7 +440,7 @@
           }
         },
         "operationId": "get-api-test-end",
-        "description": "Ends the test run",
+        "description": "This API call will stop the running test.",
         "tags": [
           "test",
           "stop"
@@ -510,7 +510,7 @@
           }
         },
         "operationId": "get-api-test-summary",
-        "description": "Retrieves a summary of the test results for every sampler"
+        "description": "Reads a summary of the test results of every sampler."
       }
     }
   },
