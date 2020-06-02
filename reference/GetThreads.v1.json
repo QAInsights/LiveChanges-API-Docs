@@ -1,9 +1,9 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "GetThreads",
+    "title": "Live Changes API",
     "version": "1.0",
-    "description": "Retrieves information about a specific thread group"
+    "description": "This is a draft introduction."
   },
   "servers": [
     {
