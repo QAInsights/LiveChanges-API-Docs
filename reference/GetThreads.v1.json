@@ -34,7 +34,6 @@
       "get": {
         "summary": "GET Thread",
         "tags": [
-          "get",
           "threads"
         ],
         "responses": {
@@ -85,7 +84,7 @@
         }
       },
       "post": {
-        "summary": "",
+        "summary": "POST Thread",
         "operationId": "post-api-threads-thread-group-name",
         "responses": {
           "200": {
@@ -142,7 +141,6 @@
       "get": {
         "summary": "GET All Threads",
         "tags": [
-          "get",
           "threads"
         ],
         "operationId": "get-api-threads",
@@ -204,7 +202,9 @@
     "/api/variables": {
       "get": {
         "summary": "GET Variables",
-        "tags": [],
+        "tags": [
+          "variables"
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -237,7 +237,7 @@
         "description": "Retrieves the variables declared for your test."
       },
       "post": {
-        "summary": "",
+        "summary": "POST Variables",
         "operationId": "post-api-variables",
         "responses": {
           "200": {
@@ -296,7 +296,9 @@
     "/api/properties": {
       "get": {
         "summary": "GET Properties",
-        "tags": [],
+        "tags": [
+          "properties"
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -321,7 +323,7 @@
         "operationId": "get-api-properties"
       },
       "post": {
-        "summary": "",
+        "summary": "POST Properties",
         "operationId": "post-api-properties",
         "responses": {
           "200": {
@@ -380,7 +382,10 @@
     "/api/test/status": {
       "get": {
         "summary": "GET Test Status",
-        "tags": [],
+        "tags": [
+          "status",
+          "test"
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -410,8 +415,7 @@
     },
     "/api/test/end": {
       "get": {
-        "summary": "Your GET endpoint",
-        "tags": [],
+        "summary": "GET Stop Test",
         "responses": {
           "200": {
             "description": "OK",
@@ -434,13 +438,20 @@
           }
         },
         "operationId": "get-api-test-end",
-        "description": "Ends the test run"
+        "description": "Ends the test run",
+        "tags": [
+          "test",
+          "stop"
+        ]
       }
     },
     "/api/test/summary": {
       "get": {
-        "summary": "Your GET endpoint",
-        "tags": [],
+        "summary": "GET Test Summary",
+        "tags": [
+          "test",
+          "summary"
+        ],
         "responses": {
           "200": {
             "description": "OK",
