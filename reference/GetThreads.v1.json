@@ -69,7 +69,7 @@
           }
         },
         "operationId": "get-api-threads-name",
-        "description": "Retrieves information about a specific thread group.",
+        "description": "Reads information about a specific thread group. To read a thread group name, use GET Threads API call.",
         "parameters": [],
         "requestBody": {
           "content": {
@@ -116,7 +116,7 @@
             "name": "Content-Type"
           }
         ],
-        "description": "",
+        "description": "Modifies thread group values of the thread group name in the URI. To read thread group name, use GET Threads API call.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -147,7 +147,7 @@
           "threads"
         ],
         "operationId": "get-api-threads",
-        "description": "Retrieves information about all thread groups",
+        "description": "Reads information about all the thread groups in the test plan.",
         "responses": {
           "200": {
             "description": "OK",
@@ -228,7 +228,7 @@
           }
         },
         "operationId": "get-api-variables",
-        "description": "Retrieves the variables declared for your test."
+        "description": "Reads the variables and its value declared in the test plan."
       },
       "post": {
         "summary": "POST Variables",
@@ -255,7 +255,7 @@
             }
           }
         },
-        "description": "Send (as JSON) your variables changes.",
+        "description": "Modifies variable's value while the test is running.",
         "parameters": [
           {
             "schema": {
@@ -317,7 +317,8 @@
             }
           }
         },
-        "operationId": "get-api-properties"
+        "operationId": "get-api-properties",
+        "description": "Reads JMeter test plan properties."
       },
       "post": {
         "summary": "POST Properties",
@@ -376,7 +377,8 @@
         ],
         "tags": [
           "properties"
-        ]
+        ],
+        "description": "Modifies JMeter properties while the test is running."
       }
     },
     "/api/test/status": {
@@ -410,7 +412,7 @@
           }
         },
         "operationId": "get-api-test-status",
-        "description": "Retrieves basic info about the test."
+        "description": "Reads basic info about the test plan."
       }
     },
     "/api/test/end": {
