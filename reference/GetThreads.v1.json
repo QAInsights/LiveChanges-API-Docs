@@ -11,13 +11,13 @@
     }
   ],
   "paths": {
-    "/api/threads/{name}": {
+    "/api/threads/{thread-group-name}": {
       "parameters": [
         {
           "schema": {
             "type": "string"
           },
-          "name": "name",
+          "name": "thread-group-name",
           "in": "path",
           "required": true
         }
@@ -61,7 +61,8 @@
           }
         },
         "operationId": "get-api-threads-name",
-        "description": "Retrieves information about a specific thread group."
+        "description": "Retrieves information about a specific thread group.",
+        "parameters": []
       }
     }
   },
