@@ -3,9 +3,10 @@
   "info": {
     "title": "Live Changes API",
     "version": "1.0",
-    "description": "This is a draft introduction.",
+    "description": "Live Changes API runs at 7566 port by default, but you can change it in the element.",
     "contact": {
       "name": "NaveenKumar Namachivayam",
+      "url": "https://github.com/QAInsights/LiveChanges-API-Docs",
       "email": "catch.nkn@gmail.com"
     },
     "license": {
@@ -15,8 +16,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:7566",
-      "description": "Live Changes API"
+      "url": "http://localhost:7566"
     }
   ],
   "paths": {
@@ -515,5 +515,6 @@
   "components": {
     "schemas": {},
     "securitySchemes": {}
-  }
+  },
+  "security": []
 }
