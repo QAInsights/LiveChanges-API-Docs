@@ -68,7 +68,10 @@
     "/api/threads": {
       "get": {
         "summary": "GET All Threads",
-        "tags": [],
+        "tags": [
+          "get",
+          "threads"
+        ],
         "responses": {
           "200": {
             "description": "OK",
