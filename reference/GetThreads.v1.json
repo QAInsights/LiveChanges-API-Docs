@@ -2,21 +2,29 @@
   "openapi": "3.0.0",
   "info": {
     "title": "GetThreads",
-    "version": "1.0"
+    "version": "1.0",
+    "description": "Retrieves information about a specific thread group"
   },
   "servers": [
     {
-      "url": "http://localhost:7566"
+      "url": "http://localhost:3000"
     }
   ],
   "paths": {
-    "/api/threads": {
+    "/api/threads/{name}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "name",
+          "in": "path",
+          "required": true
+        }
+      ],
       "get": {
         "summary": "Your GET endpoint",
-        "tags": [
-          "get",
-          "threads"
-        ],
+        "tags": [],
         "responses": {
           "200": {
             "description": "OK",
@@ -28,39 +36,33 @@
                 },
                 "examples": {
                   "success-response": {
-                    "value": [
-                      {
-                        "getOnErrorStartNextLoop": false,
-                        "getOnErrorStopTest": false,
-                        "scheduler": {
-                          "duration": 600,
-                          "delay": 0
-                        },
-                        "getOnErrorStopTestNow": false,
-                        "getOnErrorStopThread": false,
-                        "isEnabled": true,
-                        "name": "Thread Group",
-                        "active": 0,
-                        "comment": "",
-                        "rampUp": 1
-                      }
-                    ]
+                    "value": {
+                      "getOnErrorStartNextLoop": false,
+                      "getOnErrorStopTest": false,
+                      "scheduler": {
+                        "duration": 600,
+                        "delay": 0
+                      },
+                      "getOnErrorStopTestNow": false,
+                      "getOnErrorStopThread": false,
+                      "isEnabled": true,
+                      "name": "Thread Group",
+                      "active": 1,
+                      "comment": "",
+                      "rampUp": 1
+                    }
                   }
                 }
               }
-            },
-            "headers": {}
+            }
           }
         },
-        "operationId": "get-api-threads",
-        "description": "Retrieves information about all thread groups",
-        "parameters": []
-      },
-      "parameters": []
+        "operationId": "get-api-threads-name",
+        "description": "Retrieves information about a specific thread group."
+      }
     }
   },
   "components": {
-        "schemas": {}
-
+    "schemas": {}
   }
 }
