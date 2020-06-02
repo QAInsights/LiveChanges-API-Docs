@@ -190,16 +190,7 @@
             }
           }
         },
-        "parameters": [
-          {
-            "schema": {
-              "type": "string"
-            },
-            "in": "header",
-            "name": "test",
-            "description": ""
-          }
-        ]
+        "parameters": []
       }
     },
     "/api/variables": {
