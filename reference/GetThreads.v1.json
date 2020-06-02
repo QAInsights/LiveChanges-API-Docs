@@ -7,6 +7,9 @@
     "contact": {
       "name": "NaveenKumar Namachivayam",
       "email": "catch.nkn@gmail.com"
+    },
+    "license": {
+      "name": "MIT"
     }
   },
   "servers": [
@@ -165,7 +168,159 @@
             }
           }
         },
-        "operationId": "get-api-variables"
+        "operationId": "get-api-variables",
+        "description": "Retrieves the variables declared for your test."
+      }
+    },
+    "/api/properties": {
+      "get": {
+        "summary": "GET Properties",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "success-response": {
+                    "value": {
+                      "remote_hosts": "127.0.0.1",
+                      "jmeter.version": "5.3"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-api-properties"
+      }
+    },
+    "/api/test/status": {
+      "get": {
+        "summary": "GET Test Status",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "sucess-response": {
+                    "value": {
+                      "totalThreads": 1,
+                      "startTime": 1591113928254,
+                      "runningTime": 4701,
+                      "totalActiveThreads": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-api-test-status",
+        "description": "Retrieves basic info about the test."
+      }
+    },
+    "/api/test/end": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "success-response": {
+                    "value": {
+                      "info": "success",
+                      "description": "Threads will gracefully stop."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-api-test-end",
+        "description": "Ends the test run"
+      }
+    },
+    "/api/test/summary": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "success-response": {
+                    "value": [
+                      {
+                        "Google": {
+                          "averageLatency": "160",
+                          "averageResponseTime": "341",
+                          "minResponseTime": "194",
+                          "maxResponseTime": "865",
+                          "hitsPerSecond": "1.03",
+                          "sentBytesPerSecond": "233.54",
+                          "totalErrors": "0",
+                          "errorPercentage": "0",
+                          "receivedBytesPerSecond": "14690.83",
+                          "90thPercentile": "477",
+                          "totalSamples": "36",
+                          "totalBytes": "511799",
+                          "averageBytes": "14216.64",
+                          "standardDeviation": "156.37"
+                        }
+                      },
+                      {
+                        "Yahoo": {
+                          "averageLatency": "178",
+                          "averageResponseTime": "947",
+                          "minResponseTime": "492",
+                          "maxResponseTime": "6239",
+                          "hitsPerSecond": "1.2",
+                          "sentBytesPerSecond": "404.12",
+                          "totalErrors": "0",
+                          "errorPercentage": "0",
+                          "receivedBytesPerSecond": "172374.09",
+                          "90thPercentile": "1422",
+                          "totalSamples": "42",
+                          "totalBytes": "6055157",
+                          "averageBytes": "144170.4",
+                          "standardDeviation": "896.6"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-api-test-summary",
+        "description": "Retrieves a summary of the test results for every sampler"
       }
     }
   },
