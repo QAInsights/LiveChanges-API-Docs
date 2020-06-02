@@ -3,11 +3,16 @@
   "info": {
     "title": "Live Changes API",
     "version": "1.0",
-    "description": "This is a draft introduction."
+    "description": "This is a draft introduction.",
+    "contact": {
+      "name": "NaveenKumar Namachivayam",
+      "email": "catch.nkn@gmail.com"
+    }
   },
   "servers": [
     {
-      "url": "http://localhost:7566"
+      "url": "http://localhost:7566",
+      "description": "Live Changes API"
     }
   ],
   "paths": {
@@ -72,14 +77,28 @@
           "get",
           "threads"
         ],
+        "operationId": "get-api-threads",
+        "description": "Retrieves information about all thread groups",
         "responses": {
           "200": {
             "description": "OK",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "format": "hostname",
+                  "default": "localhost",
+                  "deprecated": false
+                },
+                "description": "test",
+                "allowEmptyValue": false,
+                "allowReserved": false
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "type": "object"
                 },
                 "examples": {
                   "success-response": {
@@ -87,10 +106,6 @@
                       {
                         "getOnErrorStartNextLoop": false,
                         "getOnErrorStopTest": false,
-                        "scheduler": {
-                          "duration": 600,
-                          "delay": 0
-                        },
                         "getOnErrorStopTestNow": false,
                         "getOnErrorStopThread": false,
                         "isEnabled": true,
@@ -106,12 +121,56 @@
             }
           }
         },
-        "operationId": "get-api-threads",
-        "description": "Retrieves information about all thread groups"
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "test",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "/api/variables": {
+      "get": {
+        "summary": "GET Variables",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "success-response": {
+                    "value": {
+                      "START.MS": "1591110191950",
+                      "TESTSTART.MS": "1591113928254",
+                      "JMeterThread.last_sample_ok": "true",
+                      "__jm__Thread Group__idx": "1490",
+                      "__jmeter.U_T__": "Thread Group 1-1",
+                      "START.HMS": "110311",
+                      "JMeterThread.pack": "org.apache.jmeter.threads.SamplePackage@37e9db3d",
+                      "__jmv_SAME_USER": "true",
+                      "START.YMD": "20200602"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-api-variables"
       }
     }
   },
   "components": {
-    "schemas": {}
+    "schemas": {},
+    "securitySchemes": {}
   }
 }
