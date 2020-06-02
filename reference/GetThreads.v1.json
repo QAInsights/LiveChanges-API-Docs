@@ -23,7 +23,7 @@
         }
       ],
       "get": {
-        "summary": "GET Threads",
+        "summary": "GET Thread",
         "tags": [
           "get",
           "threads"
