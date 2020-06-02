@@ -24,7 +24,10 @@
       ],
       "get": {
         "summary": "GET Threads",
-        "tags": [],
+        "tags": [
+          "get",
+          "threads"
+        ],
         "responses": {
           "200": {
             "description": "OK",
